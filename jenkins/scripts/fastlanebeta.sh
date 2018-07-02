@@ -7,4 +7,4 @@ echo $pwd
 cd android
 echo $pwd
 sleep 2
-fastlane beta
+bundle fastlane beta

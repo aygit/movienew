@@ -20,7 +20,7 @@
   },
   "jest": {
     "preset": "react-native",
-    "testResultsProcessor": "jest-junit"
+    "reporters": "jest-junit"
   },
   "jest-junit": {
      "suiteName": "jest mytesttttting",

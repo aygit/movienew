@@ -11,6 +11,14 @@ pipeline {
 
   }
 
+//  install npm and other modules required
+   stage('Build') {
+        steps { 
+        sh 'npm install'
+      }
+    }   
+  
+
 
   // do jest testing
     stage('test') {
@@ -19,17 +27,32 @@ pipeline {
        sh 'npm test -- --ci --testResultsProcessor="jest-junit"'
       }
     }
-
-
-
- // testing test
+  
+ 
+  // testing test
     stage('pubtest') {
      steps {
     junit 'reports/*.xml'
 
+ 
+   
+  //  android is built at this stage
+     stage {
+      steps {
+       sh './jenkins/scripts/fastlanebeta.sh'
+       echo 'app has ben successfully deployed to hockeyapp'
+    }
+   }
 
-  }
- }
+
+ // testing test
+//    stage('pubtest') {
+ //    steps {
+ //   junit 'reports/*.xml'
+
+
+//  }
+// }
 
 
  //publish to npm repo

@@ -52,7 +52,6 @@ pipeline {
  //    steps {
  //   junit 'reports/*.xml'
 
-
 //  }
 // }
 
@@ -73,8 +72,6 @@ post {
             junit testResults: 'reports/*.xml'
         }
     }
-
-
 
 
  }

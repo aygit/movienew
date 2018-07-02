@@ -13,11 +13,11 @@ pipeline {
 
 //  install npm and other modules required
    stage('Build') {
-        steps { 
+        steps {
         sh 'npm install'
       }
-    }   
-  
+    }
+
 
 
   // do jest testing
@@ -27,15 +27,17 @@ pipeline {
        sh 'npm test -- --ci --testResultsProcessor="jest-junit"'
       }
     }
-  
- 
+
+
   // testing test
     stage('pubtest') {
      steps {
     junit 'reports/*.xml'
 
- 
-   
+   }
+  }
+
+
   //  android is built at this stage
      stage {
       steps {

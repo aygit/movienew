@@ -39,7 +39,7 @@ pipeline {
 
 
   //  android is built at this stage
-     stage {
+     stage('mobilebuild')
       steps {
        sh './jenkins/scripts/fastlanebeta.sh'
        echo 'app has ben successfully deployed to hockeyapp'

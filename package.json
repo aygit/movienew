@@ -25,8 +25,13 @@
   "jest-junit": {
      "suiteName": "jest mytesttttting",
      "output": "reports/testreport.xml"
-     },
+   },
+ "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
+
 
 
 

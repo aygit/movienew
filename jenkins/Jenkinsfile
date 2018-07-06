@@ -38,6 +38,11 @@ pipeline {
    }
   }
 
+  post {
+          always {
+              junit testResults: 'reports/*.xml'
+          }
+      }
 
   //  android is built at this stage
      stage('mobilebuild') {
@@ -58,22 +63,18 @@ pipeline {
 
 
  //publish to npm repo
-// stage('publish') {
-//    steps {
- //    sh 'source ~/.profile'
-//     sh 'source ~/.bash_profile'
-//     sh 'npm publish'
-//    }
+ stage('publish') {
+    steps {
+    sh 'source ~/.profile'
+     sh 'source ~/.bash_profile'
+    sh 'npm publish'
+    }
 
-// }
+ }
 
 }
 
-post {
-        always {
-            junit testResults: 'reports/*.xml'
-        }
-    }
+
 
 
  }

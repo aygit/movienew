@@ -23,6 +23,9 @@ platform :android do
 
 desc "build and check all the stuff"
   lane :beta do
+     increment_version_number(
+      bump_type: "major" # Automatically increment major version number
+       )   
     gradle(task: "clean assembleRelease")
 
    hockey(

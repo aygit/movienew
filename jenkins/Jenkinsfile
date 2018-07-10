@@ -36,14 +36,14 @@ pipeline {
     junit 'reports/*.xml'
 
    }
-  }
+
 
   post {
           always {
               junit testResults: 'reports/*.xml'
           }
       }
-
+    }
   //  android is built at this stage
      stage('mobilebuild') {
       steps {
@@ -53,13 +53,7 @@ pipeline {
    }
 
 
- // testing test
-//    stage('pubtest') {
- //    steps {
- //   junit 'reports/*.xml'
 
-//  }
-// }
 
 
  //publish to npm repo

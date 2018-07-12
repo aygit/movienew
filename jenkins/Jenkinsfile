@@ -5,12 +5,12 @@ pipeline {
 
   stages {
    stage('checkout') {
-     steps {
-          checkout([$class: 'GitSCM', extensions: [$class: 'CleanCheckout']])
+     step([$class: 'WsCleanup'])
+          checkout scm
        
      }
 
-  }
+  
 
 //  install npm and other modules required
    stage('Build') {

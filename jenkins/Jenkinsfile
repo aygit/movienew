@@ -11,6 +11,7 @@ pipeline {
           extensions: scm.extensions + [
          [$class: 'CleanBeforeCheckout'],
        ]
+     ]
      }
 
   }

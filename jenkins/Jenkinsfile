@@ -7,7 +7,7 @@ pipeline {
    stage('checkout') {
      steps {
           checkout([$class: 'GitSCM',
-          [$class: 'CleanBeforeCheckout'],
+          [$class: 'CleanBeforeCheckout']
        ])
      }
 

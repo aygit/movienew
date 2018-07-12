@@ -6,7 +6,9 @@ pipeline {
   stages {
    stage('checkout') {
      steps {
-       checkout scm
+          checkout([$class: 'GitSCM',
+          [$class: 'CleanBeforeCheckout'],
+       ])
      }
 
   }

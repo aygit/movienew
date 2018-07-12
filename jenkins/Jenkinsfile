@@ -9,7 +9,7 @@ pipeline {
      steps {
        checkout([$class: 'GitSCM',
          branches: [[name: '*/master']]
-         userRemoteConfigs: [[url: 'https://github.com/aygit/movienew.git]]'
+         userRemoteConfigs: [[url: 'https://github.com/aygit/movienew.git']]
           extensions: scm.extensions + [
          [$class: 'CleanBeforeCheckout'],
        ]

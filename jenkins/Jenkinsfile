@@ -5,15 +5,12 @@ pipeline {
 
   stages {
 
-   stage('cleanworkspace') {
-      steps {
-        sh 'git clean  -xffd'
-    }
-  }
-
    stage('checkout') {
      steps {
-       checkout scm
+       checkout([$class: 'GitSCM',
+          extensions: scm.extensions + [
+         [$class: 'CleanBeforeCheckout'],
+       ]
      }
 
   }

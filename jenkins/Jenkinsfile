@@ -4,13 +4,19 @@ pipeline {
 
 
   stages {
+
+   stage('cleanworkspace') {
+      steps {
+        sh 'git clean  -xffd'
+    }
+  }
+
    stage('checkout') {
-     steps { ([$class: 'WsCleanup'])
-          checkout scm
-       }
+     steps {
+       checkout scm
      }
 
-  
+  }
 
 //  install npm and other modules required
    stage('Build') {

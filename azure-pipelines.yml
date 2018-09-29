@@ -14,5 +14,5 @@ steps:
 
 - script: |
     npm install
-    react-native run-android
-  displayName: 'npm install and build'
+    react-native run-ios
+  displayName: 'react-native'
